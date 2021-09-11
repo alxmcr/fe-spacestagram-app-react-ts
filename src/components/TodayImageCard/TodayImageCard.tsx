@@ -1,7 +1,7 @@
 import { useAPOD } from "../../hooks/useAPOD"
-import './AstronomyImage.scss'
+import './TodayImageCard.scss'
 
-export const AstronomyImage = () => {
+export const TodayImageCard = () => {
     const {astronomyImage, loadingAstronomyImage, errorAstronomyImage} = useAPOD();
 
     if (errorAstronomyImage) return <p>There was an error.</p>
