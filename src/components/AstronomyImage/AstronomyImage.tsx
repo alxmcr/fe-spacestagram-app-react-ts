@@ -1,4 +1,5 @@
 import { useAPOD } from "../../hooks/useAPOD"
+import './AstronomyImage.scss'
 
 export const AstronomyImage = () => {
     const {astronomyImage, loadingAstronomyImage, errorAstronomyImage} = useAPOD();
@@ -11,8 +12,9 @@ export const AstronomyImage = () => {
                 loadingAstronomyImage ? (
                     <p>Loading...</p>
                 ) : (
-                    <article>
-                        <img 
+                    <article className="astronomy">
+                        <img
+                            className="astronomy__image" 
                             src={astronomyImage?.url} 
                             alt={astronomyImage?.title} 
                         />

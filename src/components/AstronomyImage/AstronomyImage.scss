@@ -1,0 +1,9 @@
+@import "../../variables";
+
+.astronomy {
+    &__image {
+        display: block;
+        height: $height_image;
+        width: 100%;
+    }
+}
