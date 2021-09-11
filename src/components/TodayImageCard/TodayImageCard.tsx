@@ -18,6 +18,21 @@ export const TodayImageCard = () => {
                             src={astronomyImage?.url} 
                             alt={astronomyImage?.title} 
                         />
+                        <h3 className="astronomy__subtitle">
+                            {astronomyImage?.title}
+                        </h3>
+                        <h4 className="astronomy__date">
+                            {astronomyImage?.date}
+                        </h4>
+                        <p className="astronomy__explanation">
+                            {astronomyImage?.explanation}
+                        </p>
+                        <button 
+                            className="astronomy__button astronomy__button--like"
+                            data-message="Like button"
+                        >
+                            Like
+                        </button>
                     </article>
                 )
             }
