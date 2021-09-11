@@ -1,10 +1,10 @@
-import { Hello } from "../../components/Hello"
+import { AstronomyImage } from "../../components/AstronomyImage/AstronomyImage"
 import "./HomePage.scss"
 
 export const HomePage = () => {
     return (
         <div className="home">
-            <Hello />
+            <AstronomyImage />
         </div>
     )
 }
