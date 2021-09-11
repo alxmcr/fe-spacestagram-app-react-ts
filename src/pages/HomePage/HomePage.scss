@@ -1,3 +1,8 @@
+@import "../../variables";
+
 .home {
-  background-color: black;
+    &__subtitle {
+        color: $accent;
+        font-weight: normal;
+    }
 }
