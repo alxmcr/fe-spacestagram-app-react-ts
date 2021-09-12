@@ -8,6 +8,7 @@ export const ImagesSearchForm = ({
 }: ImagesSearchFormProps) => {
   const handleQuery = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
+    setShowImages(false);
   };
 
   const submitSearch = (e: React.FormEvent<HTMLFormElement>) => {

@@ -13,3 +13,7 @@ export interface ImagesSearchFormProps {
     setQuery: (query: string) => void;
     setShowImages: (query: boolean) => void;
 }
+
+export interface ImagesGridProps {
+    query: string;
+}

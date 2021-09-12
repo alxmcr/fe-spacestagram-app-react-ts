@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ImagesGrid } from "../../components/ImagesGrid/ImagesGrid";
 import { ImagesSearchForm } from "../../components/ImagesSearchForm/ImagesSearchForm";
 import "./HomePage.scss";
 
@@ -15,7 +16,7 @@ export const HomePage = () => {
         setQuery={setQuery}
         setShowImages={setShowImages}
       />
-      {showImages ? <p>{query}</p> : null}
+      {showImages ? <ImagesGrid query={query} /> : null}
     </div>
   );
 };
