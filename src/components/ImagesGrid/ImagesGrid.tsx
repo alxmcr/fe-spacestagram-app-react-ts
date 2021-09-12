@@ -5,6 +5,7 @@ import { NasaImageCard } from "../NasaImageCard/NasaImageCard";
 export const ImagesGrid = ({ query = "" }: ImagesGridProps) => {
   const { nasaImageResults, loadingNasaSearchResults, errorNasaSearchResults } =
     useNasaAssets(query);
+  console.log({ nasaImageResults });
 
   return (
     <section className="images">
