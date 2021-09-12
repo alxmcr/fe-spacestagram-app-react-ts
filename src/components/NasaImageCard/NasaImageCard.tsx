@@ -1,4 +1,5 @@
 import { NasaImageCardProps } from "../../componentsType/propsTypes";
+import { timeAgo } from "../../helpers/helperDates";
 import { useNasaAsset } from "../../hooks/useNasaAsset";
 import "./NasaImageCard.scss";
 
@@ -32,7 +33,7 @@ export const NasaImageCard = ({ nasaImage }: NasaImageCardProps) => {
       </div>
       <div className="card__footer">
         <h3 className="card__title">{nasaImage?.title}</h3>
-        <p className="card__date">{nasaImage?.date_created}</p>
+        <p className="card__date">{timeAgo(nasaImage?.date_created)}</p>
       </div>
     </article>
   );
