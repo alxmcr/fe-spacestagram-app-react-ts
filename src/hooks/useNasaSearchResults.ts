@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { NasaSearchResult } from "../componentsType/types";
 import { appHttp } from "../helpers/appHttp";
 
-export const useNasaAssets = (query: string) => {
+export const useNasaSearchResults = (query: string) => {
     const [nasaImageResults, setNasaSearchResults] = useState<NasaSearchResult | null>(null)
     const [loadingNasaSearchResults, setLoadingNasaSearchResults] = useState<boolean>(false);
     const [errorNasaSearchResults, setErrorNasaSearchResults] = useState<Error | null>(null);

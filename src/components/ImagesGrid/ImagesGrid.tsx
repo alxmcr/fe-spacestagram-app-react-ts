@@ -1,10 +1,10 @@
 import { ImagesGridProps } from "../../componentsType/propsTypes";
-import { useNasaAssets } from "../../hooks/useNasaAssets";
+import { useNasaSearchResults } from "../../hooks/useNasaSearchResults";
 import { NasaImageCard } from "../NasaImageCard/NasaImageCard";
 
 export const ImagesGrid = ({ query = "" }: ImagesGridProps) => {
   const { nasaImageResults, loadingNasaSearchResults, errorNasaSearchResults } =
-    useNasaAssets(query);
+    useNasaSearchResults(query);
 
   return (
     <section className="images">
