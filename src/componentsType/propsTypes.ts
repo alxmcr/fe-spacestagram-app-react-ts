@@ -1,4 +1,4 @@
-import { NasaImageResult } from "./types";
+import { ImageResult, NasaImageResult } from "./types";
 
 export interface NasaImagesContextProps {
     results: NasaImageResult[]
@@ -12,6 +12,10 @@ export interface ImagesSearchFormProps {
     query: string;
     setQuery: (query: string) => void;
     setShowImages: (query: boolean) => void;
+}
+
+export interface NasaImageCardProps {
+    nasaImage: ImageResult
 }
 
 export interface ImagesGridProps {

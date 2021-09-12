@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { UseNasaAssetsProps } from "../componentsType/propsTypes";
-import { NasaImageResult } from "../componentsType/types";
+import { NasaSearchResult } from "../componentsType/types";
 import { appHttp } from "../helpers/appHttp";
 
 export const useNasaAssets = (query: string) => {
-    const [nasaImageResults, setNasaImageResults] = useState<NasaImageResult[]>([])
-    const [loadingNasaImageResults, setLoadingNasaImageResults] = useState<boolean>(false);
-    const [errorNasaImageResults, setErrorNasaImageResults] = useState<Error | null>(null);
+    const [nasaImageResults, setNasaSearchResults] = useState<NasaSearchResult | null>(null)
+    const [loadingNasaSearchResults, setLoadingNasaSearchResults] = useState<boolean>(false);
+    const [errorNasaSearchResults, setErrorNasaSearchResults] = useState<Error | null>(null);
     // Nasa API
     const apiKEY = import.meta.env.VITE_NASA_API_KEY;
     const baseURL = import.meta.env.VITE_NASA_API_BASE_URL_IMAGES;
@@ -24,18 +23,18 @@ export const useNasaAssets = (query: string) => {
         let abortController = new AbortController();
         const { signal } = abortController;
 
-        setLoadingNasaImageResults(true)
+        setLoadingNasaSearchResults(true)
 
-        appHttp<NasaImageResult[]>(url, signal)
+        appHttp<NasaSearchResult>(url, signal)
             .then(data => {
-                setNasaImageResults(data)
+                setNasaSearchResults(data)
             })
             .catch(error => {
                 if (error.name !== 'AbortError') {
-                    setErrorNasaImageResults(error)
+                    setErrorNasaSearchResults(error)
                 }
             })
-            .finally(() => setLoadingNasaImageResults(false))
+            .finally(() => setLoadingNasaSearchResults(false))
 
         // Clean up
         return function cancel() {
@@ -43,5 +42,5 @@ export const useNasaAssets = (query: string) => {
         };
     }, [url])
 
-    return { nasaImageResults, loadingNasaImageResults, errorNasaImageResults };
+    return { nasaImageResults, loadingNasaSearchResults, errorNasaSearchResults };
 }

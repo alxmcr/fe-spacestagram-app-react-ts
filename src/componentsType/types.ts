@@ -15,6 +15,12 @@ export interface LinkImage {
     href: string
 }
 
+export interface LinkAsset {
+    href: string
+    rel: string
+    prompt: string
+}
+
 export interface NasaAsset {
     date_created: string
     nasa_id: string
@@ -32,4 +38,32 @@ export interface NasaImageResult {
     "links": LinkImage[]
     "href": string
     "data": NasaAsset[]
+}
+
+export interface NasaMetadata {
+    total_hits: number
+}
+
+export interface ImageResult {
+    nasa_id: string;
+    secondary_creator: string;
+    description_508: string;
+    center: string;
+    date_created: string;
+    title: string;
+    keywords: string[];
+    media_type: string;
+    description: string;
+}
+
+export interface NasaSearchCollection {
+    href: string
+    items: ImageResult[]
+    version: string
+    links: LinkAsset[]
+    metadata: NasaMetadata
+}
+
+export interface NasaSearchResult {
+    collection: NasaSearchCollection
 }
