@@ -1,6 +1,7 @@
 import { ImagesGridProps } from "../../componentsType/propsTypes";
 import { useNasaSearchResults } from "../../hooks/useNasaSearchResults";
 import { NasaImageCard } from "../NasaImageCard/NasaImageCard";
+import "./ImagesGrid.scss"
 
 export const ImagesGrid = ({ query = "" }: ImagesGridProps) => {
   const { nasaImageResults, loadingNasaSearchResults, errorNasaSearchResults } =
