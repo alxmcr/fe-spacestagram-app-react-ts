@@ -51,14 +51,20 @@ export interface ImageResult {
     center: string;
     date_created: string;
     title: string;
+    location: string;
+    photographer: string;
     keywords: string[];
     media_type: string;
     description: string;
 }
 
+export interface NasaItem {
+    data: ImageResult[]
+}
+
 export interface NasaSearchCollection {
     href: string
-    items: ImageResult[]
+    items: NasaItem[]
     version: string
     links: LinkAsset[]
     metadata: NasaMetadata

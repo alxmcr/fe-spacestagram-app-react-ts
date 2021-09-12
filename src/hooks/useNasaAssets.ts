@@ -9,7 +9,7 @@ export const useNasaAssets = (query: string) => {
     // Nasa API
     const apiKEY = import.meta.env.VITE_NASA_API_KEY;
     const baseURL = import.meta.env.VITE_NASA_API_BASE_URL_IMAGES;
-    const resource = import.meta.env.VITE_NASA_API_BASE_URL_RESOURCE;
+    const resource = import.meta.env.VITE_NASA_API_RESOURCE_SEARCH;
     // URL
     let nasaURL = new URL(`${baseURL}/${resource}`);
     let searchParams = new URLSearchParams()

@@ -5,7 +5,6 @@ import { NasaImageCard } from "../NasaImageCard/NasaImageCard";
 export const ImagesGrid = ({ query = "" }: ImagesGridProps) => {
   const { nasaImageResults, loadingNasaSearchResults, errorNasaSearchResults } =
     useNasaAssets(query);
-  console.log({ nasaImageResults });
 
   return (
     <section className="images">
@@ -14,8 +13,11 @@ export const ImagesGrid = ({ query = "" }: ImagesGridProps) => {
       {errorNasaSearchResults ? <p>{errorNasaSearchResults.message}</p> : null}
       {nasaImageResults?.collection?.items !== null ? (
         <div className="images__container">
-          {nasaImageResults?.collection?.items.map((imageResult) => (
-            <NasaImageCard nasaImage={imageResult} key={imageResult.nasa_id} />
+          {nasaImageResults?.collection?.items.map((item) => (
+            <NasaImageCard
+              nasaImage={item?.data[0]}
+              key={item?.data[0]?.nasa_id}
+            />
           ))}
         </div>
       ) : (
