@@ -1,12 +1,18 @@
+import { useState } from "react";
 import { NasaImageCardProps } from "../../componentsType/propsTypes";
 import { timeAgo } from "../../helpers/helperDates";
 import { useNasaAsset } from "../../hooks/useNasaAsset";
+import { HeartIcon } from "../../icons/HeartIcon";
 import "./NasaImageCard.scss";
 
 export const NasaImageCard = ({ nasaImage }: NasaImageCardProps) => {
+  const [liked, setLiked] = useState<boolean>(false);
   const { nasaAssetResult, loadingNasaAssetResult, errorNasaAssetResult } =
     useNasaAsset(nasaImage?.nasa_id);
-  const handleLike = () => console.log("Like!", nasaImage?.nasa_id);
+  const handleLike = () => {
+    setLiked(!liked);
+    console.log("Like!", nasaImage?.nasa_id);
+  };
 
   return (
     <article id={nasaImage?.nasa_id} className="card">
@@ -18,7 +24,11 @@ export const NasaImageCard = ({ nasaImage }: NasaImageCardProps) => {
         </p>
         {loadingNasaAssetResult ? <p>Loading image</p> : null}
         <button className="card__button" onClick={handleLike}>
-          L
+          {liked ? (
+            <HeartIcon fill="#FFC3D4" stroke="#FF346E" />
+          ) : (
+            <HeartIcon fill="#fff" stroke="#000" />
+          )}
         </button>
       </div>
       <div className="card__body">
