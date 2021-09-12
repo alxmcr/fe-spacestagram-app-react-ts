@@ -7,3 +7,9 @@ export interface NasaImagesContextProps {
 export interface UseNasaAssetsProps {
     query: string
 }
+
+export interface ImagesSearchFormProps {
+    query: string;
+    setQuery: (query: string) => void;
+    setShowImages: (query: boolean) => void;
+}

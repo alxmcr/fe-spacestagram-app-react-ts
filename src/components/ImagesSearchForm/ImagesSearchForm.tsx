@@ -1,14 +1,18 @@
 import { FormEvent, useState } from "react";
+import { ImagesSearchFormProps } from "../../componentsType/propsTypes";
 
-export const ImagesSearchForm = () => {
-  const [query, setQuery] = useState<string>("");
+export const ImagesSearchForm = ({
+  query,
+  setQuery,
+  setShowImages
+}: ImagesSearchFormProps) => {
   const handleQuery = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
   };
 
   const submitSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert(query);
+    setShowImages(true);
   };
 
   return (
