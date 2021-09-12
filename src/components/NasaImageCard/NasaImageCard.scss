@@ -1,5 +1,17 @@
+@import "../../variables";
+
 .card {
-  background-color: aqua;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px $accent;
+  &__footer {
+    padding: 0.5rem;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+  }
   &__image {
     background-position: center;
     display: block;

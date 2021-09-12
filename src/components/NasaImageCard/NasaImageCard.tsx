@@ -10,8 +10,15 @@ export const NasaImageCard = ({ nasaImage }: NasaImageCardProps) => {
   return (
     <article id={nasaImage?.nasa_id} className="card">
       <div className="card__header">
-        <p className="card__secondary">{nasaImage?.secondary_creator}</p>
+        <p className="card__photographer">
+          {nasaImage?.photographer
+            ? nasaImage?.photographer
+            : nasaImage?.secondary_creator}
+        </p>
         {loadingNasaAssetResult ? <p>Loading image</p> : null}
+        <button className="card__button" onClick={handleLike}>
+          L
+        </button>
       </div>
       <div className="card__body">
         {errorNasaAssetResult ? <p>{errorNasaAssetResult.message}</p> : null}
@@ -22,14 +29,9 @@ export const NasaImageCard = ({ nasaImage }: NasaImageCardProps) => {
             alt={`Image ${nasaImage.title}`}
           />
         ) : null}
-        <p className="card__description">{nasaImage?.description}</p>
-      </div>
-      <div className="card_actions">
-        <button className="card__button" onClick={handleLike}>
-          L
-        </button>
       </div>
       <div className="card__footer">
+        <h3 className="card__title">{nasaImage?.title}</h3>
         <p className="card__date">{nasaImage?.date_created}</p>
       </div>
     </article>
