@@ -18,8 +18,6 @@ export const useNasaAssets = (query: string) => {
     searchParams.append("media_type", "image")
     nasaURL.search = searchParams.toString();
     const url = nasaURL.toString();
-    console.log(searchParams.toString())
-    console.log({ url })
 
     useEffect(() => {
         // Abort fetch
