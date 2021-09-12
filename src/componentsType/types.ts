@@ -73,3 +73,17 @@ export interface NasaSearchCollection {
 export interface NasaSearchResult {
     collection: NasaSearchCollection
 }
+
+export interface NasaAssetItem {
+    href: string;
+}
+
+export interface NasaAssetCollection {
+    version: string;
+    href: string;
+    items: NasaAssetItem[]
+}
+
+export interface NasaAssetResult {
+    collection: NasaAssetCollection
+}
