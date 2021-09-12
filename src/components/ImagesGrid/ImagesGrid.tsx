@@ -12,7 +12,9 @@ export const ImagesGrid = ({ query = "" }: ImagesGridProps) => {
       {errorNasaImageResults ? <p>{errorNasaImageResults.message}</p> : null}
       {nasaImageResults !== null ? (
         <pre>{JSON.stringify(nasaImageResults)}</pre>
-      ) : null}
+      ) : (
+        <p>There aren't results.</p>
+      )}
     </section>
   );
 };
