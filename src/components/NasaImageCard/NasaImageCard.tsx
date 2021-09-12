@@ -5,6 +5,7 @@ import "./NasaImageCard.scss";
 export const NasaImageCard = ({ nasaImage }: NasaImageCardProps) => {
   const { nasaAssetResult, loadingNasaAssetResult, errorNasaAssetResult } =
     useNasaAsset(nasaImage?.nasa_id);
+  console.log({ nasaAssetResult });
 
   return (
     <article id={nasaImage?.nasa_id} className="card">
@@ -13,7 +14,7 @@ export const NasaImageCard = ({ nasaImage }: NasaImageCardProps) => {
       {nasaAssetResult?.collection?.items ? (
         <img
           className="card__image"
-          src={nasaAssetResult?.collection?.items[0].href}
+          src={nasaAssetResult?.collection?.items[1]?.href}
           alt={`Image ${nasaImage.title}`}
         />
       ) : null}
