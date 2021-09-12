@@ -3,8 +3,8 @@ import { UseNasaAssetsProps } from "../componentsType/propsTypes";
 import { NasaImageResult } from "../componentsType/types";
 import { appHttp } from "../helpers/appHttp";
 
-export const useNasaAssets = ({ query }: UseNasaAssetsProps) => {
-    const [astronomyImage, setNasaImageResults] = useState<NasaImageResult[]>([])
+export const useNasaAssets = (query: string) => {
+    const [nasaImageResults, setNasaImageResults] = useState<NasaImageResult[]>([])
     const [loadingNasaImageResults, setLoadingNasaImageResults] = useState<boolean>(false);
     const [errorNasaImageResults, setErrorNasaImageResults] = useState<Error | null>(null);
     // Nasa API
@@ -14,11 +14,11 @@ export const useNasaAssets = ({ query }: UseNasaAssetsProps) => {
     // URL
     let nasaURL = new URL(`${baseURL}/${resource}`);
     let searchParams = new URLSearchParams()
-    searchParams.append("api_key", apiKEY)
     searchParams.append("q", query)
     searchParams.append("media_type", "image")
     nasaURL.search = searchParams.toString();
     const url = nasaURL.toString();
+    console.log(searchParams.toString())
     console.log({ url })
 
     useEffect(() => {
@@ -45,5 +45,5 @@ export const useNasaAssets = ({ query }: UseNasaAssetsProps) => {
         };
     }, [url])
 
-    return { astronomyImage, loadingNasaImageResults, errorNasaImageResults };
+    return { nasaImageResults, loadingNasaImageResults, errorNasaImageResults };
 }
