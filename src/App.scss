@@ -1,3 +1,18 @@
 .App {
-    padding: 1rem;
+  padding: 0 1rem;
 }
+
+@media screen and (min-width: 768px) {
+  .App {
+    margin: 0 auto;
+    width: 80%;
+  }
+}
+
+
+@media screen and (min-width: 1024px) {
+    .App {
+      margin: 0 auto;
+      width: 90%;
+    }
+  }
