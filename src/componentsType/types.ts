@@ -87,3 +87,13 @@ export interface NasaAssetCollection {
 export interface NasaAssetResult {
     collection: NasaAssetCollection
 }
+
+// Reducers
+export interface LikeState {
+    nasaIds: string[];
+}
+
+export interface LikeAction {
+    type: "LIKE" | "UNLIKE",
+    payload: string
+}
