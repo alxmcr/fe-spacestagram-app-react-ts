@@ -1,28 +1,34 @@
 @import "../../variables";
 
 .search {
-    background-color: white;
-    border-radius: 0.5rem;
-    align-items: center;
-    display: grid;
-    grid-template-columns: 0.7fr 3fr 0.25fr;
-    gap: 0.5rem;
-    justify-content: center;
-    padding: 0.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 0.7fr 3fr 0.25fr;
+  gap: 0.5rem;
+  justify-content: center;
+  padding: 0.5rem;
+
+  &__query {
+    border: none;
+    height: $height_button;
+    outline: none;
+  }
+  &__submit {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    height: $height_button;
+    margin: 0;
+    outline: none;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .search {
     margin: 0 auto;
     width: 50%;
-    &__query {
-        border: none;
-        height: $height_button;
-        outline: none;
-    }
-    &__submit {
-        appearance: none;
-        background-color: transparent;
-        border: none;
-        height: $height_button;
-        margin: 0;
-        outline: none;
-        padding: 0;
-    }
+  }
 }

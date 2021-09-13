@@ -17,11 +17,7 @@ export const NasaImageCard = ({ nasaImage }: NasaImageCardProps) => {
   return (
     <article id={nasaImage?.nasa_id} className="card">
       <div className="card__header">
-        <p className="card__photographer">
-          {nasaImage?.photographer
-            ? nasaImage?.photographer
-            : nasaImage?.secondary_creator}
-        </p>
+        <p className="card__photographer">NASA</p>
         {loadingNasaAssetResult ? <p>Loading image</p> : null}
       </div>
       <div className="card__body">
