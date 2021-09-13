@@ -4,7 +4,10 @@
   background-color: white;
   width: 100%;
   &__actions {
-    padding: 0.35rem;
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0.35rem 0.5rem;
   }
   &__button {
     appearance: none;
@@ -23,9 +26,11 @@
     padding: 0.35rem 0.5rem;
   }
   &__header {
+    align-items: center;
     display: flex;
     justify-content: space-between;
-    padding: 0.35rem;
+    padding: 0.2rem 0.8rem;
+    height: 4rem;
   }
   &__image {
     background-position: center;
@@ -35,6 +40,8 @@
     object-fit: cover;
   }
   &__photographer {
+    margin: 0;
+    padding: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -47,6 +54,13 @@
 
 @media screen and (min-width: 768px) {
   .card {
-    width: 15rem;
+    width: 25rem;
+  }
+}
+
+
+@media screen and (min-width: 1024px) {
+  .card {
+    width: 20rem;
   }
 }
