@@ -1,5 +1,6 @@
-import { FormEvent, useState } from "react";
 import { ImagesSearchFormProps } from "../../componentsType/propsTypes";
+import { SearchIcon } from "../../icons/SearchIcon";
+import "./ImagesSearchForm.scss"
 
 export const ImagesSearchForm = ({
   query,
@@ -29,7 +30,7 @@ export const ImagesSearchForm = ({
         value={query}
       />
       <button type="submit" className="search__submit">
-        Search
+        <SearchIcon className="icon" fill={"#a23344"}  />
       </button>
     </form>
   );

@@ -27,3 +27,8 @@ export interface HeartProps {
     fill: string;
     stroke: string;
 }
+
+export interface SearchProps {
+    className: string;
+    fill: string;
+}
