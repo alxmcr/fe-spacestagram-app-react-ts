@@ -1,0 +1,60 @@
+@import "../../variables";
+
+.balls {
+  border-radius: 50%;
+  height: $min-height-balls;
+  padding: 2rem;
+  position: relative;
+  width: $width-balls;
+  animation: spin 3s linear infinite;
+  &__ball {
+    background-color: $ball-color;
+    border-radius: 50%;
+    display: block;
+    height: $ball-height;
+    position: absolute;
+    text-align: center;
+    width: $ball-width;
+    &--one {
+      left: $ball-padding;
+      top: $ball-padding;
+    }
+    &--two {
+      left: 45%;
+      top: 0;
+    }
+    &--three {
+      right: $ball-padding;
+      top: $ball-padding;
+    }
+    &--four {
+      left: 0;
+      top: 45%;
+    }
+    &--five {
+      right: 0;
+      top: 45%;
+    }
+    &--six {
+      bottom: $ball-padding;
+      left: $ball-padding;
+    }
+    &--seven {
+      bottom: 0;
+      left: 45%;
+    }
+    &--eight {
+      bottom: $ball-padding;
+      right: $ball-padding;
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

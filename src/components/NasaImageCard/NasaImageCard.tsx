@@ -3,6 +3,7 @@ import { NasaImageCardProps } from "../../componentsType/propsTypes";
 import { timeAgo } from "../../helpers/helperDates";
 import { useNasaAsset } from "../../hooks/useNasaAsset";
 import { HeartIcon } from "../../icons/HeartIcon";
+import { AppLoading } from "../AppLoading";
 import "./NasaImageCard.scss";
 
 export const NasaImageCard = ({ nasaImage }: NasaImageCardProps) => {
@@ -18,7 +19,7 @@ export const NasaImageCard = ({ nasaImage }: NasaImageCardProps) => {
     <article id={nasaImage?.nasa_id} className="card">
       <div className="card__header">
         <p className="card__photographer">NASA</p>
-        {loadingNasaAssetResult ? <p>Loading image</p> : null}
+        {loadingNasaAssetResult ? <AppLoading /> : null}
       </div>
       <div className="card__body">
         {errorNasaAssetResult ? <p>{errorNasaAssetResult.message}</p> : null}
@@ -27,6 +28,7 @@ export const NasaImageCard = ({ nasaImage }: NasaImageCardProps) => {
             className="card__image"
             src={nasaAssetResult?.collection?.items[1]?.href}
             alt={`Image ${nasaImage.title}`}
+            loading="lazy"
           />
         ) : null}
       </div>

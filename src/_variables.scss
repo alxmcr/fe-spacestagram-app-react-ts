@@ -11,3 +11,13 @@ $height_button: 1.5rem;
 // Typography
 $font-family-headings: "Raleway", sans-serif;
 $font-family-body: "Open Sans", sans-serif;
+
+/* Loading */
+$min-height-balls: 2rem;
+$width-balls: 2rem;
+$ball-height: 0.75rem;
+$ball-width: 0.75rem;
+$ball-gap: 2rem;
+$ball-padding: $ball-height;
+$ball-top: $ball-padding;
+$ball-color: $primary;
