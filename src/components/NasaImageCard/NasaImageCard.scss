@@ -2,15 +2,29 @@
 
 .card {
   background-color: white;
-  border-radius: 0.5rem;
-  box-shadow: 3px 3px $accent;
+  &__actions {
+    padding: 0.35rem;
+  }
+  &__button {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    height: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+  &__date {
+    color: $accent;
+    font-size: 0.8rem;
+    margin: 0;
+  }
   &__footer {
-    padding: 0.5rem;
+    padding: 0.35rem 0.5rem;
   }
   &__header {
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem;
+    padding: 0.35rem;
   }
   &__image {
     background-position: center;
@@ -18,5 +32,9 @@
     height: 15rem;
     width: 100%;
     object-fit: cover;
+  }
+  &__title {
+    color: $primary;
+    margin: 0;
   }
 }

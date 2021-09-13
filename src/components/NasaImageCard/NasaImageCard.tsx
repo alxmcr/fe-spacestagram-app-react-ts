@@ -23,13 +23,6 @@ export const NasaImageCard = ({ nasaImage }: NasaImageCardProps) => {
             : nasaImage?.secondary_creator}
         </p>
         {loadingNasaAssetResult ? <p>Loading image</p> : null}
-        <button className="card__button" onClick={handleLike}>
-          {liked ? (
-            <HeartIcon fill="#FFC3D4" stroke="#FF346E" />
-          ) : (
-            <HeartIcon fill="#fff" stroke="#000" />
-          )}
-        </button>
       </div>
       <div className="card__body">
         {errorNasaAssetResult ? <p>{errorNasaAssetResult.message}</p> : null}
@@ -40,6 +33,19 @@ export const NasaImageCard = ({ nasaImage }: NasaImageCardProps) => {
             alt={`Image ${nasaImage.title}`}
           />
         ) : null}
+      </div>
+      <div className="card__actions">
+        <button className="card__button" onClick={handleLike}>
+          {liked ? (
+            <HeartIcon
+              className="icon--liked"
+              fill="#FFC3D4"
+              stroke="#FF346E"
+            />
+          ) : (
+            <HeartIcon className="icon" fill="#fff" stroke="#000" />
+          )}
+        </button>
       </div>
       <div className="card__footer">
         <h3 className="card__title">{nasaImage?.title}</h3>

@@ -21,3 +21,9 @@ export interface NasaImageCardProps {
 export interface ImagesGridProps {
     query: string;
 }
+
+export interface HeartProps {
+    className: string;
+    fill: string;
+    stroke: string;
+}
