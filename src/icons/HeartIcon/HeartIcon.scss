@@ -1,5 +1,19 @@
 .icon {
-    &--liked:hover {
-        transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    &--liked {
+        animation: heart 1s;
+    }
+}
+
+@keyframes heart {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
     }
 }

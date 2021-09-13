@@ -39,7 +39,7 @@ export const NasaImageCard = ({ nasaImage }: NasaImageCardProps) => {
           {liked ? (
             <HeartIcon
               className="icon--liked"
-              fill="#FFC3D4"
+              fill="#FF346E"
               stroke="#FF346E"
             />
           ) : (
