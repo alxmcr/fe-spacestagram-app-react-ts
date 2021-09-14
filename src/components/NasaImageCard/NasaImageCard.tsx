@@ -2,28 +2,29 @@ import { useContext, useState } from "react";
 import { NasaImageCardProps } from "../../componentsType/propsTypes";
 import { LikesContext } from "../../context/LikesContext";
 import { timeAgo } from "../../helpers/helperDates";
+import { isLikedImage } from "../../helpers/helperLocalStorage";
 import { useNasaAsset } from "../../hooks/useNasaAsset";
 import { HeartIcon } from "../../icons/HeartIcon";
 import { AppLoading } from "../AppLoading";
 import "./NasaImageCard.scss";
 
 export const NasaImageCard = ({ nasaImage }: NasaImageCardProps) => {
-  const [liked, setLiked] = useState<boolean>(false);
-  const { nasaAssetResult, loadingNasaAssetResult, errorNasaAssetResult } =
-    useNasaAsset(nasaImage?.nasa_id);
+  const { nasa_id } = nasaImage;
   const likesValue = useContext(LikesContext);
-  const { dispatch } = likesValue;
+  const { state, dispatch } = likesValue;
+  const isLiked = isLikedImage(nasa_id, state?.nasaIds);
+  const [liked, setLiked] = useState<boolean>(isLiked);
+  const { nasaAssetResult, loadingNasaAssetResult, errorNasaAssetResult } =
+    useNasaAsset(nasa_id);
 
   const handleLike = () => {
-    console.log("Like")
-    const { nasa_id } = nasaImage;
+    console.log("Like");
     setLiked(true);
     dispatch({ type: "LIKE", payload: nasa_id });
   };
-  
+
   const handleUnlike = () => {
-    console.log("UnLike")
-    const { nasa_id } = nasaImage;
+    console.log("UnLike");
     setLiked(false);
     dispatch({ type: "UNLIKE", payload: nasa_id });
   };
