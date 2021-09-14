@@ -16,6 +16,10 @@
     border: none;
     height: $height_button;
     outline: none;
+    &:focus {
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+    }
   }
   &__submit {
     appearance: none;
