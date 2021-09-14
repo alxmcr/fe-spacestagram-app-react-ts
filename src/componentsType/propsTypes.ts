@@ -1,4 +1,4 @@
-import { ImageResult, NasaImageResult } from "./types";
+import { ImageResult, LikesState, NasaImageResult } from "./types";
 
 export interface NasaImagesContextProps {
     results: NasaImageResult[]
@@ -31,4 +31,15 @@ export interface HeartProps {
 export interface SearchProps {
     className: string;
     fill: string;
+}
+
+// Context
+export interface LikesActionProps {
+    type: "LIKE" | "UNLIKE",
+    payload: string
+}
+
+export interface LikesContextProps {
+    nasaIds: string[],
+    dispatch: (action: LikesActionProps) => LikesState
 }
