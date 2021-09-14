@@ -12,5 +12,5 @@ export interface LikesContextProps {
 
 export const LikesContext = React.createContext<LikesContextProps>({
     state: initialLikesState,
-    dispatch: () => undefined,
+    dispatch: () => {},
 });

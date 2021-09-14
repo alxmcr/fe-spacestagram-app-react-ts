@@ -1,10 +1,9 @@
-import { useReducer, useState } from "react";
+import { useContext, useState } from "react";
 import { NasaImageCardProps } from "../../componentsType/propsTypes";
-import { LikesState } from "../../componentsType/types";
+import { LikesContext } from "../../context/LikesContext";
 import { timeAgo } from "../../helpers/helperDates";
 import { useNasaAsset } from "../../hooks/useNasaAsset";
 import { HeartIcon } from "../../icons/HeartIcon";
-import { likesReducer } from "../../reducers/likesReducer";
 import { AppLoading } from "../AppLoading";
 import "./NasaImageCard.scss";
 
@@ -12,6 +11,8 @@ export const NasaImageCard = ({ nasaImage }: NasaImageCardProps) => {
   const [liked, setLiked] = useState<boolean>(false);
   const { nasaAssetResult, loadingNasaAssetResult, errorNasaAssetResult } =
     useNasaAsset(nasaImage?.nasa_id);
+  const likesValue = useContext(LikesContext);
+  const { dispatch } = likesValue;
 
   const handleLike = () => {
     const { nasa_id } = nasaImage;
@@ -19,7 +20,7 @@ export const NasaImageCard = ({ nasaImage }: NasaImageCardProps) => {
     // console.log({ state });
 
     setLiked(!liked);
-    // dispatch({ type: "LIKE", payload: nasa_id });
+    dispatch({ type: "LIKE", payload: nasa_id });
   };
 
   return (
