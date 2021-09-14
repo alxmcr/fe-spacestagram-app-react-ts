@@ -18,13 +18,11 @@ export const NasaImageCard = ({ nasaImage }: NasaImageCardProps) => {
     useNasaAsset(nasa_id);
 
   const handleLike = () => {
-    console.log("Like");
     setLiked(true);
     dispatch({ type: "LIKE", payload: nasa_id });
   };
 
   const handleUnlike = () => {
-    console.log("UnLike");
     setLiked(false);
     dispatch({ type: "UNLIKE", payload: nasa_id });
   };
