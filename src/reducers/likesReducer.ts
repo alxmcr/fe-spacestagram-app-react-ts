@@ -21,11 +21,13 @@ export const likesReducer: Reducer<LikesState, LikesAction> = (state: LikesState
                 ? currentNasaIds
                 : [...currentNasaIds, nasaId]
             const likesStateUpdated = { ...state, nasaIds }
-            return likesStateUpdated
+            localStorage.setItem("LIKES", JSON.stringify(likesStateUpdated))
+            return likesStateUpdated;
         case "UNLIKE":
             const filterCondition = (likeNasaId: string) => likeNasaId !== nasaId
             const nasaIdsFiltered = currentNasaIds.filter(filterCondition);
             const unlikesStateUpdated = { ...state, nasaIds: nasaIdsFiltered };
+            localStorage.setItem("LIKES", JSON.stringify(unlikesStateUpdated))
             return unlikesStateUpdated;
         default:
             return currentState;

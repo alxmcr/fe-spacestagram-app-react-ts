@@ -6,7 +6,11 @@ import "./App.scss";
 import { LikesContext } from "./context/LikesContext";
 
 function App() {
-  const initialLikesReducer: LikesState = { nasaIds: [] };
+  const likesLocalStorage = localStorage.getItem("LIKES") || '{"nasaIds": []}';
+  console.log(likesLocalStorage);
+  console.log(JSON.parse(likesLocalStorage));
+  const initialLikesReducer: LikesState = JSON.parse(likesLocalStorage);
+  console.log({ initialLikesReducer });
   const [state, dispatch] = useReducer(likesReducer, initialLikesReducer);
   const likesValue = { state, dispatch };
 
