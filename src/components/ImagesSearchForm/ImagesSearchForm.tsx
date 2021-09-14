@@ -26,8 +26,10 @@ export const ImagesSearchForm = ({
         id="query"
         type="search"
         className="search__query"
+        placeholder="Enter your search term here"
         onChange={handleQuery}
         value={query}
+        required
       />
       <button type="submit" className="search__submit">
         <SearchIcon className="icon" fill={"#a23344"}  />

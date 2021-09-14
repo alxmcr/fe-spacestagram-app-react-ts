@@ -15,12 +15,17 @@ export const NasaImageCard = ({ nasaImage }: NasaImageCardProps) => {
   const { dispatch } = likesValue;
 
   const handleLike = () => {
+    console.log("Like")
     const { nasa_id } = nasaImage;
-    console.log("Like!", nasa_id);
-    // console.log({ state });
-
-    setLiked(!liked);
+    setLiked(true);
     dispatch({ type: "LIKE", payload: nasa_id });
+  };
+  
+  const handleUnlike = () => {
+    console.log("UnLike")
+    const { nasa_id } = nasaImage;
+    setLiked(false);
+    dispatch({ type: "UNLIKE", payload: nasa_id });
   };
 
   return (
@@ -41,17 +46,19 @@ export const NasaImageCard = ({ nasaImage }: NasaImageCardProps) => {
         ) : null}
       </div>
       <div className="card__actions">
-        <button className="card__button" onClick={handleLike}>
-          {liked ? (
+        {liked ? (
+          <button className="card__button" onClick={handleUnlike}>
             <HeartIcon
               className="icon--liked"
               fill="#FF346E"
               stroke="#FF346E"
             />
-          ) : (
+          </button>
+        ) : (
+          <button className="card__button" onClick={handleLike}>
             <HeartIcon className="icon" fill="#fff" stroke="#000" />
-          )}
-        </button>
+          </button>
+        )}
       </div>
       <div className="card__footer">
         <h3 className="card__title">{nasaImage?.title}</h3>
