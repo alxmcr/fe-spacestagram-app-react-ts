@@ -3,7 +3,7 @@
 
 Brought to you by NASA's image API.
 
-![Spacestagram - Home](https://res.cloudinary.com/images-alex-projects/image/upload/v1629524596/Portfolio/appartify-assets/images/Spacestagram-home_nu9dkd.png)
+![Spacestagram - Home](https://res.cloudinary.com/images-alex-projects/image/upload/v1631597117/Portfolio/the-spacestagram-images/the-spacestagram-app_zfpfby.png)
 
 
 ## Features
@@ -55,7 +55,7 @@ To run this project, you will need to add the following environment variables to
 
 `VITE_NASA_API_KEY`
 
-You should put as value the API KEY that you got from [NASA's API](https://https://api.nasa.gov/).
+You should put as value the API KEY that you got from [NASA's API](https://api.nasa.gov/).
 
 `VITE_NASA_API_BASE_URL_APOD`
 
@@ -93,26 +93,24 @@ interface ImportMetaEnv {
 
 `HTML`, `CSS`, `JavaScript`, `TypeScript`, and `React.js`.
 
-  
 ## Screenshots
 
-![Apartments](https://res.cloudinary.com/images-alex-projects/image/upload/v1629524217/Portfolio/appartify-assets/images/apartments-map_repfwl.png)
+Image without like
 
-![Apartment](https://res.cloudinary.com/images-alex-projects/image/upload/v1629524217/Portfolio/appartify-assets/images/aparment-image_zlfdvv.png)
+![Image without like](https://res.cloudinary.com/images-alex-projects/image/upload/v1631597319/Portfolio/the-spacestagram-images/the-spacestagram-mobile_fxvdpb.png)
 
+Image with like
+
+![Image with like](https://res.cloudinary.com/images-alex-projects/image/upload/v1631597440/Portfolio/the-spacestagram-images/the-spacestagram-like-mobile_pnk1h4.png)
   
 ## Demo
 
-[https://Spacestagram-app.netlify.app/](https://Spacestagram-app.netlify.app/)
+[https://the-spacestagram-app.netlify.app/](https://the-spacestagram-app.netlify.app/)
 
-  
 ## Authors
 
 - [Alejandro M. Coca Rojas (@alxmcr)](https://www.github.com/alxmcr)
-
   
 ## Feedback
 
 If you have any feedback, please reach out to me at amcocarojas@gmail.com.
-
-  
