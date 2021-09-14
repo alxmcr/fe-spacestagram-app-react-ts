@@ -5,10 +5,12 @@ const initialLikesState: LikesState = {
     nasaIds: []
 }
 
-export const LikesContext = React.createContext<{
+export interface LikesContextProps {
     state: LikesState
     dispatch: React.Dispatch<LikesAction>
-}>({
+}
+
+export const LikesContext = React.createContext<LikesContextProps>({
     state: initialLikesState,
     dispatch: () => undefined,
 });
