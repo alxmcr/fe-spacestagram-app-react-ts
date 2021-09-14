@@ -20,13 +20,13 @@ export const likesReducer: Reducer<LikesState, LikesAction> = (state: LikesState
             const nasaIds = currentNasaIds.includes(nasaId)
                 ? currentNasaIds
                 : [...currentNasaIds, nasaId]
-
-            return { ...state, nasaIds }
+            const likesStateUpdated = { ...state, nasaIds }
+            return likesStateUpdated
         case "UNLIKE":
             const filterCondition = (likeNasaId: string) => likeNasaId !== nasaId
             const nasaIdsFiltered = currentNasaIds.filter(filterCondition);
-
-            return { ...state, nasaIds: nasaIdsFiltered }
+            const unlikesStateUpdated = { ...state, nasaIds: nasaIdsFiltered };
+            return unlikesStateUpdated;
         default:
             return currentState;
     }
