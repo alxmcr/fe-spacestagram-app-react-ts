@@ -1,4 +1,5 @@
-import { ImageResult, LikesState, NasaImageResult } from "./types";
+import { LikesState } from "../reducers/likesReducer";
+import { ImageResult, NasaImageResult } from "./types";
 
 export interface NasaImagesContextProps {
     results: NasaImageResult[]
