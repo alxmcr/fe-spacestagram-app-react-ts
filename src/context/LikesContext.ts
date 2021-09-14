@@ -1,5 +1,5 @@
 import React from "react";
-import { LikeAction, LikesState } from "../componentsType/types";
+import { LikesAction, LikesState } from "../reducers/likesReducer";
 
 const initialLikesState: LikesState = {
     nasaIds: []
@@ -7,7 +7,7 @@ const initialLikesState: LikesState = {
 
 export const LikesContext = React.createContext<{
     state: LikesState
-    dispatch: React.Dispatch<LikeAction>
+    dispatch: React.Dispatch<LikesAction>
 }>({
     state: initialLikesState,
     dispatch: () => undefined,
